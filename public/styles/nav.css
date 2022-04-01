@@ -1,0 +1,40 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+
+ nav {
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding-left: 20px;
+  padding-right: 20px;
+  z-index: 1;
+  position:fixed;
+}
+#spanStyle {
+display: flex;
+position: relative;
+margin-right: 1.5em;
+margin-left: 1.5em;
+font-family:'Bungee'; 
+top: 40px;
+}
+#writeNew {
+  display: flex;
+  float: right;
+  margin-right: 1.5em;
+  margin-left: 1.5em;
+  font-size: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon {
+  color: red;
+  display: flex;
+  align-items: center;
+  margin-top: -10px;
+}
