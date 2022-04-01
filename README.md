@@ -8,3 +8,5 @@ This is an AJAX-based twitter clone, it operates on a single page and makes use 
 
 - Express
 - Node 5.10.x or above
+- Body-parser
+- Timeago.js
