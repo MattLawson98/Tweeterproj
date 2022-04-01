@@ -1,0 +1,21 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body > header {
+  margin-top: 120px;
+  display:flex;
+  height: 400px;
+  width: 100%;
+  background-color: #d47f00;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20%;
+}
+ .pfp {
+   margin-top: 10%;
+ }
