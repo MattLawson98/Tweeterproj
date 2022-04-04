@@ -78,7 +78,7 @@ const submitTweetPost = function(event) {
     data: $(this).serialize()
   })
     .then(function(tweet) {
-      location.reload();
+      loadTweets();
     })
     .catch((err) => {
       console.log('There was an error', err);
