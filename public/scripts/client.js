@@ -3,18 +3,21 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
+//Uses timeago to convert time tweet was created into normal values
 const tweetdate = function(data) {
 let time = timeago.format(data)
 return time;
 }
 
+//escape function to secure sight input
 const escape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
-
+//Turns the tweet that is submitted into an html formatted article!
 const createTweetElement = function(data) {
   let $tweet = $(`
   <article class="tweet">
@@ -41,6 +44,7 @@ const createTweetElement = function(data) {
   return $tweet;
 };
 
+//adds tweets to the tweet container
 const renderTweet = function(data) {
   $('#tweets').empty();
   for (let tweet of data) {
@@ -48,6 +52,7 @@ const renderTweet = function(data) {
   }
 };
 
+//Ajax request to get json data and then pass it through renderTweet!
 const loadTweets = function() {
   $.ajax('/tweets', { method: 'GET' })
     .then((tweets) => {
@@ -60,7 +65,7 @@ const loadTweets = function() {
   };
 
 
-
+//On a submit callback this will handle ajax post requests as well as form validation
 const submitTweetPost = function(event) {
   event.preventDefault();
   $('.errorText').slideUp(400).text('');
@@ -73,6 +78,7 @@ const submitTweetPost = function(event) {
     return $('.errorText').text('Your Tweet exceeds the maximum characters').slideDown();
   }
   
+  //Tweet submission database
   $.ajax('/tweets', {
     method: 'POST',
     data: $(this).serialize()
@@ -87,6 +93,7 @@ const submitTweetPost = function(event) {
   $('.counter').text(140);
 };
 
+//Loads any premade tweets on initial launch
 loadTweets();
 
 $(document).ready(function() {
